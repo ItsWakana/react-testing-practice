@@ -11,7 +11,10 @@
     "preview": "vite preview"
   },
   "jest:": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "dependencies": {
     "react": "^18.2.0",
