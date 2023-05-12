@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Counter component > Increments counter 1`] = `
+<div>
+  <h1
+    class="counter"
+  >
+    Count:
+    0
+  </h1>
+  <button
+    class="increment-btn"
+  >
+    Increment
+  </button>
+</div>
+`;
