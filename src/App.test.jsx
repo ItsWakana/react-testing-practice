@@ -1,11 +1,17 @@
 import React from "react";
-// import { ... } from "@testing-library/react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import Login from "./Login";
 
-describe("App component", () => {
+describe("Login component", () => {
     it("renders correct heading", () => {
-        render(<App />);
-        expect(screen.getByRole("heading").textContent).toMatch(/our first test/i);
+        render(<Login />)
+        expect(screen.getByRole("heading")).toHaveTextContent('Welcome to the login page');
     });
-});
+    it("renders correct button", () => {
+        render(<Login />)
+        const button = screen.getByRole("button");
+        expect(button).toHaveClass("submit-btn");
+        expect(button).toHaveTextContent("Submit form");
+    });
+})
