@@ -6,7 +6,6 @@ import Counter from "./Counter";
 describe("Counter component", () => {
     it("Increments counter", async () => {
         const user = userEvent.setup();
-        let count = 0;
 
         const { container } = render(<Counter />);
 
@@ -15,11 +14,15 @@ describe("Counter component", () => {
         const counterHeading = screen.getByRole("heading");
         const button = screen.getByRole("button", { name: "Increment" });
 
-        expect(counterHeading).toHaveTextContent(`Count:${count}`);
+        expect(counterHeading).toHaveTextContent('Count:0');
 
         await user.click(button);
-        count++;
-        expect(counterHeading).toHaveTextContent(`Count:${count}`);
+        
+        expect(counterHeading).toHaveTextContent('Count:1');
+
+        await user.click(button);
+        
+        expect(counterHeading).toHaveTextContent('Count:2');
 
     });
 });
